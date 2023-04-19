@@ -9,7 +9,7 @@ mongoose.Promise = global.Promise;
 
 (async () => {
   try {
-    await mongoose.connect(DB_HOST);
+    await mongoose.connect(DB_HOST, { useNewUrlParser: true });
     console.log("Database connection successful");
     app.listen(PORT, function () {
       console.log(`Server running. Use our API on port: ${PORT}`);
