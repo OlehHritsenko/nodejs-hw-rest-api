@@ -13,7 +13,7 @@ const { ctrlContacts } = require("../../controllers");
 // Get all contacts -> /api/contacts
 router.get("/", auth, ctrl(ctrlContacts.getAll));
 
-// Get contact by id -> /api/contacts/id
+// Get contact by id -> /api/contacts/<contactId>
 router.get("/:contactId", validateID, auth, ctrl(ctrlContacts.getById));
 
 // Add new contact -> /api/contacts with new contact
@@ -24,7 +24,7 @@ router.post(
   ctrl(ctrlContacts.addContact)
 );
 
-// Update contact by id -> /api/contacts/id with updated contact
+// Update contact by id -> /api/contacts/<contactId> with updated contact
 router.put(
   "/:contactId",
   validateID,
@@ -42,7 +42,7 @@ router.patch(
   ctrl(ctrlContacts.updateStatusContact)
 );
 
-// Delete contact by id -> /api/contacts/id and then Get without this contact
+// Delete contact by id -> /api/contacts/<contactId> and then Get without this contact
 router.delete(
   "/:contactId",
   validateID,
