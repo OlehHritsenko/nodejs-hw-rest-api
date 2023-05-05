@@ -41,15 +41,5 @@
     "lint-staged": "13.2.0",
     "nodemon": "^2.0.22",
     "supertest": "^6.3.3"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
