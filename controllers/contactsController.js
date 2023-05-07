@@ -30,7 +30,11 @@ const addContact = async (req, res) => {
 const updateContact = async (req, res, next) => {
   const { contactId } = req.params;
   const { _id } = req.user;
-  const result = await service.updateContact({ contactId, _id, ...req.body });
+  const result = await service.updateContact({
+    contactId,
+    _id,
+    ...req.body,
+  });
   if (!result) {
     return next(new NotFound(`Not found contact with id: ${contactId}`));
   }
